@@ -81,14 +81,13 @@ export function FractionalReserveDemo() {
   const initialDeposit = 10000;
   const maxRounds = 8;
 
-  const { entries, totalDeposits, totalLoans, totalReserves } = buildChain(
+  const { entries } = buildChain(
     initialDeposit,
     reserveRatio,
     maxRounds
   );
 
   const theoreticalMax = initialDeposit / reserveRatio;
-  const multiplier = (totalDeposits / initialDeposit).toFixed(1);
 
   function handleNextRound() {
     if (visibleRounds < maxRounds) setVisibleRounds((r) => r + 1);
@@ -102,7 +101,6 @@ export function FractionalReserveDemo() {
   const visibleEntries = entries.slice(0, visibleRounds);
   const visibleTotalDeposits = visibleEntries.reduce((s, e) => s + e.deposit, 0);
   const visibleTotalLoans = visibleEntries.reduce((s, e) => s + e.loanCreated, 0);
-  const visibleTotalReserves = visibleEntries.reduce((s, e) => s + e.reserves, 0);
   const visibleMultiplier = (visibleTotalDeposits / initialDeposit).toFixed(1);
 
   return (

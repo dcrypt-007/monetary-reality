@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     template: "%s — Monetary Reality",
   },
   description: SITE_DESCRIPTION,
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   keywords: [
     "inflation",
     "monetary policy",
