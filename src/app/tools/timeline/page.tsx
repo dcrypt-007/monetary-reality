@@ -1,44 +1,43 @@
+import type { Metadata } from "next";
 import { PageShell } from "@/components/ui/PageShell";
+import { MonetaryTimeline } from "@/components/tools/MonetaryTimeline";
+import { WebApplicationSchema, BreadcrumbSchema } from "@/components/ui/JsonLd";
 
-export const metadata = {
-  title: "Monetary Expansion Timeline — Monetary Reality",
-  description: "A visual history of money supply, debt, and prices across decades.",
+export const metadata: Metadata = {
+  title: "Monetary Expansion Timeline",
+  description:
+    "Visual history of U.S. money supply, federal debt, and price levels from 1960 to present. Key monetary events from the Federal Reserve Act to COVID stimulus.",
+  openGraph: {
+    title: "Monetary Expansion Timeline — Monetary Reality",
+    description:
+      "Explore the history of M2 money supply growth, federal debt, and CPI with key monetary events from 1913 to today.",
+    url: "https://monetaryreality.com/tools/timeline",
+  },
+  alternates: {
+    canonical: "https://monetaryreality.com/tools/timeline",
+  },
 };
 
 export default function TimelinePage() {
   return (
     <PageShell
       title="Monetary Expansion Timeline"
-      subtitle="A long-term visual history of money supply growth, national debt, and price levels. See the patterns emerge across decades."
+      subtitle="A long-term history of money supply growth, national debt, and price levels — with key events that shaped the modern monetary system."
     >
+      <WebApplicationSchema
+        name="Monetary Expansion Timeline"
+        description="Visual timeline of money supply, debt, and prices with key monetary events from 1913 to present."
+        url="https://monetaryreality.com/tools/timeline"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://monetaryreality.com" },
+          { name: "Tools", url: "https://monetaryreality.com/tools/timeline" },
+          { name: "Timeline", url: "https://monetaryreality.com/tools/timeline" },
+        ]}
+      />
       <div className="space-y-8">
-        <div className="bg-stone-100 border-2 border-dashed border-stone-300 rounded-xl p-12 text-center">
-          <div className="max-w-md mx-auto">
-            <div className="text-4xl mb-4">
-              <span role="img" aria-label="timeline">&#x1F4C5;</span>
-            </div>
-            <h3 className="text-lg font-semibold text-stone-900 mb-2">
-              Timeline Under Development
-            </h3>
-            <p className="text-sm text-stone-600 leading-relaxed">
-              This visualization will show the long-term trajectory of monetary
-              aggregates, debt, and prices — with key events annotated for
-              context.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4 text-stone-600 text-sm">
-          <h3 className="text-base font-semibold text-stone-900">Planned Features</h3>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Multi-decade chart of M2 money supply</li>
-            <li>Federal debt overlay</li>
-            <li>CPI and real price indices</li>
-            <li>Key event annotations (Nixon shock, QE rounds, COVID response)</li>
-            <li>Zoomable time ranges</li>
-            <li>International comparisons</li>
-          </ul>
-        </div>
+        <MonetaryTimeline />
       </div>
     </PageShell>
   );

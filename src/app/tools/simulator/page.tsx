@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import { PageShell } from "@/components/ui/PageShell";
+import { WebApplicationSchema, BreadcrumbSchema } from "@/components/ui/JsonLd";
 
-export const metadata = {
-  title: "Money vs Goods Simulator — Monetary Reality",
-  description: "Interactive simulator showing how prices respond when money supply grows faster than real output.",
+export const metadata: Metadata = {
+  title: "Money vs Goods Simulator",
+  description:
+    "Interactive simulator showing how prices respond when money supply grows faster than real output. Adjust growth rates and watch the price level change over time.",
+  openGraph: {
+    title: "Money vs Goods Simulator — Monetary Reality",
+    description:
+      "Adjust money supply growth, real output growth, and velocity — then watch how prices respond in real time.",
+    url: "https://monetaryreality.com/tools/simulator",
+  },
+  alternates: {
+    canonical: "https://monetaryreality.com/tools/simulator",
+  },
 };
 
 export default function SimulatorPage() {
@@ -11,6 +23,18 @@ export default function SimulatorPage() {
       title="Money vs Goods Simulator"
       subtitle="The flagship interactive tool. Adjust money supply growth, real output growth, and velocity — then watch how prices respond in real time."
     >
+      <WebApplicationSchema
+        name="Money vs Goods Simulator"
+        description="Interactive simulator showing how prices respond when money supply grows faster than real output."
+        url="https://monetaryreality.com/tools/simulator"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://monetaryreality.com" },
+          { name: "Tools", url: "https://monetaryreality.com/tools/simulator" },
+          { name: "Simulator", url: "https://monetaryreality.com/tools/simulator" },
+        ]}
+      />
       <div className="space-y-8">
         {/* Placeholder for the actual simulator */}
         <div className="bg-stone-100 border-2 border-dashed border-stone-300 rounded-xl p-12 text-center">

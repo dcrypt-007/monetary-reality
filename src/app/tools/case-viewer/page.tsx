@@ -1,58 +1,42 @@
+import type { Metadata } from "next";
 import { PageShell } from "@/components/ui/PageShell";
-import Link from "next/link";
+import { WebApplicationSchema, BreadcrumbSchema } from "@/components/ui/JsonLd";
+import { CaseViewerContent } from "./CaseViewerContent";
 
-export const metadata = {
-  title: "Case Study Viewer — Monetary Reality",
-  description: "Interactive deep dives into historical monetary collapses from Weimar to Zimbabwe.",
+export const metadata: Metadata = {
+  title: "Case Study Viewer",
+  description:
+    "Interactive viewer for historical monetary collapse case studies. Explore Weimar Germany, Zimbabwe, Rome, Venezuela, France, and Argentina in detail.",
+  openGraph: {
+    title: "Case Study Viewer — Monetary Reality",
+    description:
+      "Interactive tool to explore six historical cases of monetary collapse — from ancient Rome to modern Venezuela.",
+    url: "https://monetaryreality.com/tools/case-viewer",
+  },
+  alternates: {
+    canonical: "https://monetaryreality.com/tools/case-viewer",
+  },
 };
 
 export default function CaseViewerPage() {
   return (
     <PageShell
-      title="Monetary Collapse Case Study Viewer"
-      subtitle="Interactive deep dives into historical monetary collapses. Each case follows a consistent framework: conditions, triggers, mechanisms, consequences, and lessons."
+      title="Case Study Viewer"
+      subtitle="Select a historical case to explore. Each follows a consistent framework: pre-conditions, triggers, mechanisms, consequences, and lessons."
     >
-      <div className="space-y-8">
-        <div className="bg-stone-100 border-2 border-dashed border-stone-300 rounded-xl p-12 text-center">
-          <div className="max-w-md mx-auto">
-            <div className="text-4xl mb-4">
-              <span role="img" aria-label="books">&#x1F4DA;</span>
-            </div>
-            <h3 className="text-lg font-semibold text-stone-900 mb-2">
-              Case Viewer Under Development
-            </h3>
-            <p className="text-sm text-stone-600 leading-relaxed">
-              Each case study will be presented as an interactive, data-rich
-              narrative with timelines, charts, and primary source references.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4 text-stone-600 text-sm">
-          <h3 className="text-base font-semibold text-stone-900">Case Study Framework</h3>
-          <p>Every case study will follow this consistent structure:</p>
-          <ol className="list-decimal list-inside space-y-1">
-            <li><strong>Pre-conditions</strong> — What was the monetary/fiscal situation before the crisis?</li>
-            <li><strong>Trigger Events</strong> — What set off the acceleration?</li>
-            <li><strong>Mechanisms</strong> — How did the money supply expand? Through what channels?</li>
-            <li><strong>Price Response</strong> — How did prices and purchasing power respond?</li>
-            <li><strong>Social Consequences</strong> — Who was affected and how?</li>
-            <li><strong>Resolution</strong> — How did it end? What replaced the failed system?</li>
-            <li><strong>Lessons</strong> — What general principles does this case illustrate?</li>
-          </ol>
-        </div>
-
-        <div className="space-y-4 text-stone-600 text-sm">
-          <h3 className="text-base font-semibold text-stone-900">Planned Cases</h3>
-          <p>
-            See the full list on the{" "}
-            <Link href="/case-studies" className="text-blue-600 hover:text-blue-800">
-              Case Studies page
-            </Link>
-            .
-          </p>
-        </div>
-      </div>
+      <WebApplicationSchema
+        name="Case Study Viewer"
+        description="Interactive viewer for historical monetary collapse case studies covering Weimar, Zimbabwe, Rome, Venezuela, France, and Argentina."
+        url="https://monetaryreality.com/tools/case-viewer"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://monetaryreality.com" },
+          { name: "Tools", url: "https://monetaryreality.com/tools/case-viewer" },
+          { name: "Case Study Viewer", url: "https://monetaryreality.com/tools/case-viewer" },
+        ]}
+      />
+      <CaseViewerContent />
     </PageShell>
   );
 }
