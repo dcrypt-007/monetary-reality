@@ -26,7 +26,7 @@ export function HeroSection() {
             Read the Thesis
           </Link>
           <Link
-            href="/tools/simulator"
+            href="/money-vs-goods"
             className="px-6 py-3 border border-stone-300 text-stone-700 text-sm font-medium rounded-lg hover:bg-stone-50 transition-colors"
           >
             Try the Simulator

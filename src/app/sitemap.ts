@@ -61,12 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${SITE_URL}/tools/simulator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${SITE_URL}/tools/calculator`,
       lastModified: new Date(),
       changeFrequency: "monthly",

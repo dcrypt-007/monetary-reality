@@ -5,7 +5,7 @@ const tools = [
     title: "Money vs Goods Simulator",
     description:
       "See what happens to prices when money supply grows faster than real output. Adjust the variables yourself.",
-    href: "/tools/simulator",
+    href: "/money-vs-goods",
     status: "Coming Soon",
   },
   {

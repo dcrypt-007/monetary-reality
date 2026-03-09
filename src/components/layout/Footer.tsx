@@ -21,7 +21,7 @@ const footerSections = [
   {
     title: "Tools",
     links: [
-      { label: "Money vs Goods Simulator", href: "/tools/simulator" },
+      { label: "Money vs Goods Simulator", href: "/money-vs-goods" },
       { label: "Purchasing Power Calculator", href: "/tools/calculator" },
       { label: "Monetary Expansion Timeline", href: "/tools/timeline" },
       { label: "Case Study Viewer", href: "/tools/case-viewer" },
