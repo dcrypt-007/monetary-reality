@@ -50,3 +50,45 @@ h1, h2, h3, h4, h5, h6 {
 .link-underline:hover::after {
   width: 100%;
 }
+
+/* Custom range slider thumb — dark, visible on all devices */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 9999px;
+  background: #d6d3d1;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1c1917;
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1c1917;
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  background: #44403c;
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb:active {
+  background: #44403c;
+  transform: scale(1.1);
+}

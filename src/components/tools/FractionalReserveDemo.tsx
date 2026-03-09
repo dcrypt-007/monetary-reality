@@ -138,7 +138,7 @@ export function FractionalReserveDemo() {
               setReserveRatio(Number(e.target.value) / 100);
               setVisibleRounds(1);
             }}
-            className="w-full h-2 bg-stone-200 rounded-full appearance-none cursor-pointer accent-stone-900"
+            className="w-full cursor-pointer"
           />
           <div className="flex justify-between text-xs text-stone-400 mt-1">
             <span>1% (loose)</span>
